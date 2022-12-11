@@ -1,0 +1,106 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-item lines="none">
+    <h1>Louer votre bien </h1>
+  </ion-item>
+
+
+    <!--<div class="btn-ajout-photo"><ion-button>
+      <ion-icon slot="start" name="image-outline"></ion-icon>
+      Ajouter photos
+    </ion-button></div> -->
+
+
+    <div class="formulaire">
+      <ion-list>
+        <ion-item lines="none">
+          <ion-button expand="block" color = "secondary" (click)="addPhotoToGallery()">
+            <ion-icon slot="start" name="camera"></ion-icon>Camera</ion-button>
+        </ion-item>
+
+
+          <ion-card *ngFor="let photo of photoService.photos; index as position">
+                  <ion-img [(ngModel)]="firebaseData.image" [src]="firebaseData.image" ></ion-img>
+          <ion-button slot="end" fill="clear" (click)="addImage({title:'test'})">
+            <ion-icon name="cloud-upload"></ion-icon></ion-button>
+          </ion-card>
+
+
+        <ion-item>
+          <ion-label>Titre: </ion-label>
+          <ion-input [(ngModel)]="firebaseData.text" type="text" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Date d'achat: </ion-label>
+          <ion-input [(ngModel)]="firebaseData.date" type="date"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Description/ État: </ion-label>
+          <ion-input  [(ngModel)]="firebaseData.description" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Marque: </ion-label>
+          <ion-input  [(ngModel)]="firebaseData.marque" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mise en garde: </ion-label>
+          <ion-input [(ngModel)]="firebaseData.Misengarde" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Prix: </ion-label>
+          <ion-input [(ngModel)]="firebaseData.number" type="number"></ion-input>
+        </ion-item>
+
+
+
+
+
+
+
+          <ion-item >
+         <ion-button expand="block" color = "tertiary" (click)="addFirebase()" expand="block" >
+          <ion-icon name="cloud-upload"></ion-icon>Ajouter</ion-button>
+          </ion-item>
+
+      </ion-list>
+
+
+
+
+
+
+
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-tabs>
+          <ion-tab-bar slot="bottom">
+            <ion-tab-button routerLink="/categories">
+              <ion-icon class="icon-footer" name="home-outline"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button routerLink="/recherche">
+              <ion-icon class="icon-footer" name="search-outline"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button routerLink="/ajout">
+              <ion-icon id="plus" class="icon-footer" name="add-outline"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button href="">
+              <ion-icon class="icon-footer" name="chatbubble-outline"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button routerLink="/connect">
+              <ion-icon class="icon-footer" name="person-outline"></ion-icon>
+            </ion-tab-button>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-toolbar>
+    </ion-footer>

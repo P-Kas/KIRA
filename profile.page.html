@@ -1,0 +1,86 @@
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-button (click)="logout()">
+				<ion-icon slot="icon-only" name="log-out"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+		<ion-title> Mon Profile </ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <div class="preview">
+      <ion-avatar (click)="changeImage()">
+        <img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
+        <ng-template #placheolder_avatar>
+          <div class="fallback">
+            <p>photo de profile</p>
+          </div>
+        </ng-template>
+      </ion-avatar>
+    </div>
+  </ion-item>
+<ion-card>
+  <ion-item lines="none">
+    <ion-icon class="icon-compte" name="calendar-number-outline"></ion-icon>
+    <ion-label>Mes indisponibilités</ion-label>
+  </ion-item>
+  <ion-item lines="none" routerLink="/mes">
+    <ion-icon name="apps-outline"></ion-icon>
+    <ion-label>Mes produits</ion-label>
+  </ion-item>
+  <ion-item lines="none" routerLink="/favories">
+    <ion-icon class="icon-compte" name="heart-outline"></ion-icon>
+    <ion-label>Mes favories</ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-icon class="icon-compte" name="checkmark-outline"></ion-icon>
+    <ion-label>Guide Kira</ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-icon class="icon-compte" name="settings-outline"></ion-icon>
+    <ion-label>Paramètre</ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-icon class="icon-compte" name="lock-closed-outline"></ion-icon>
+    <ion-label>Paramètre des cookies</ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-icon class="icon-compte" name="reader-outline"></ion-icon>
+    <ion-label>Information légale</ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-icon class="icon-compte" name="mail-outline"></ion-icon>
+    <ion-label>Nous contactez</ion-label>
+  </ion-item>
+</ion-card>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/categories">
+          <ion-icon class="icon-footer" name="home-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/recherche">
+          <ion-icon class="icon-footer" name="search-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/ajout">
+          <ion-icon id="plus" class="icon-footer" name="add-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button href="">
+          <ion-icon class="icon-footer" name="chatbubble-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/connect">
+          <ion-icon class="icon-footer" name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

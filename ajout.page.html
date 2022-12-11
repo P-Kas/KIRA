@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+  <h1> Choisir la catégorie</h1>
+</ion-item>
+
+<ion-card  routerLink="/rajouter-produit" class="card">
+  <ion-item lines="none" id="btp">
+    <ion-label class="titre">BTP</ion-label>
+  </ion-item>
+</ion-card>
+<ion-card routerLink="/ele-ajout" class="card">
+  <ion-item lines="none">
+    <ion-label class="titre">Electronique</ion-label>
+  </ion-item>
+</ion-card>
+<ion-card routerLink="/jard-aout" class="card">
+  <ion-item lines="none">
+    <ion-label class="titre">Jardinage</ion-label>
+  </ion-item>
+</ion-card>
+
+
+
+
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/categories">
+          <ion-icon class="icon-footer" name="home-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/recherche">
+          <ion-icon class="icon-footer" name="search-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/ajout">
+          <ion-icon id="plus" class="icon-footer" name="add-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button href="">
+          <ion-icon class="icon-footer" name="chatbubble-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/connect">
+          <ion-icon class="icon-footer" name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
